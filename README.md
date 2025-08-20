@@ -8,9 +8,9 @@ Esta API recomienda películas según el género solicitado por el usuario o pue
 
 ## 🐳 Construcción y Ejecución del Contenedor en Docker
 
-Para crear la imagen en Docker se utilizó el siguiente comando:
+Para crear la imagen en Docker se utilizó el siguiente comando: **docker build -t apimovies:v1 .**
 
-**docker build -t apimovies:v1 .**
+Para crear y ejecutar un contenedor a partir de la imagen creada se utilizó el siguiente comando: **docker run -p 8080:8080 apimovies:v1**
 
 ![Docker run](<imagenes/Docker run.png>)
 
@@ -34,7 +34,7 @@ Para crear la imagen en Docker se utilizó el siguiente comando:
 
 🔹 **Agregar una nueva película**
 
--Comando: curl -X POST http://localhost:8080/api/movies -H "Content-Type: application/json" -d "{\"title\":\"Gladiator\",\"genre\":\"Action\"}" 
+- Comando: curl -X POST http://localhost:8080/api/movies -H "Content-Type: application/json" -d "{\"title\":\"Gladiator\",\"genre\":\"Action\"}" 
 
 ![agregar movie](imagenes/Action.png)
 
