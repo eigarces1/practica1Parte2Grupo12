@@ -17,7 +17,7 @@ movies = [
 
 @app.route('/')
 def home():
-    return jsonify({"message": "Bienvenido a la API de Recomendación de Películas 🎬"})
+    return jsonify({"message": "Bienvenido a la API de Recomendacion de Peliculas"})
 
 # GET: todas las películas
 @app.route('/api/movies', methods=['GET'])
