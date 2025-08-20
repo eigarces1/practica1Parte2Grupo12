@@ -1,3 +1,4 @@
+import random
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
@@ -69,6 +70,13 @@ def delete_movie(movie_id):
 
     movies = [m for m in movies if m["id"] != movie_id]
     return jsonify({"message": f"Película con id {movie_id} eliminada"}), 200
+
+# Nuevo feature: obtener una película aleatoria DESDE LA BRANCH
+@app.route('/api/movies/random', methods=['GET'])
+def get_random_movie():
+    if not movies:
+        return jsonify({"error": "No hay películas registradas"}), 404
+    return jsonify(random.choice(movies))
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0", port=8080)
